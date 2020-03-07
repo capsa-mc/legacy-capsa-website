@@ -115,18 +115,30 @@
 	color: #0000FF;
 }
 
-</style>
+	.auto-style4 {
+		color: #FF00FF;
+	}
+
+	</style>
 
 
+	<script type="text/javascript">
+		function fillAnnouncement() {
+			var txtFile = new XMLHttpRequest();
+			txtFile.open("GET", "announcement.txt", true);
+			txtFile.onreadystatechange = function() {
+				if (txtFile.readyState === 4 && txtFile.status == 200) {
+				 allText = txtFile.responseText;
+				}
+			    document.getElementById("announcementBox").innerHTML = allText;
+			}
+		}		
+	</script>
+
+</head>
 
 
-
-	</head>
-
-
-
-<body>
-
+<body onload="fillAnnouncement()" >
   <div id="main" style="background: #FFFFFF url(style/back2.png) repeat-y">
 
     <div id="logo"></div>
@@ -220,9 +232,9 @@
 
 <h1>Announcement <span style='font-family:"TSC UKai M TT"'>&#36890;&#21578;</span></h1>
 
-<p class="auto-style3">
-CAPSA will close this week 2020-03-07. CAPSA&#26412;&#21608; 2020-03-07&#20851;&#38381;&#12290;</p>
-		  <p class="MsoNormal">
+<p class="auto-style4" id="announcementBox">
+	
+</p> <p class="MsoNormal">
 		  <span class="auto-style3"><strong>We are renting the facilities of MCPS and our 
 operating status is totally depend on the MCPS board's weather decision. Please 
 keep checking the MCPS website </strong></span>
