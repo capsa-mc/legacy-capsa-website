@@ -125,14 +125,14 @@
 	<script type="text/javascript">
 		function fillAnnouncement() {
 			var txtFile = new XMLHttpRequest();
-			txtFile.open("GET", "announcement.txt", true);
 			txtFile.onreadystatechange = function() {
-				if (txtFile.readyState === 4 && txtFile.status == 200) {
-				 allText = txtFile.responseText;
-				}
-			    document.getElementById("announcementBox").innerHTML = allText;
+					if (txtFile.readyState == 4 && txtFile.status == 200) {
+							document.getElementById("announcementBox").innerHTML = txtFile.responseText;
+					}
 			}
-		}		
+			txtFile.open("GET", "/announcement.txt", true);
+			txtFile.send();
+		}	
 	</script>
 
 </head>
@@ -458,7 +458,7 @@ text-underline:none">&#35531;&#25353;&#27492;&#27396;</span>)</a><o:p></o:p></p>
 
 
 
-      copyright © 2019 Chinese American Parents &amp; Students Association |
+      copyright ï¿½ 2019 Chinese American Parents &amp; Students Association |
 
 		designed by <a href="mailto:lleung@mbhs.edu">Lisa Leung</a></div>
 
