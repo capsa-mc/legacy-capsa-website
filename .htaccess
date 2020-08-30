@@ -1,4 +1,4 @@
-<filesMatch "\.txt$">
+<filesMatch "announcement\.txt$">
   FileETag None
   <ifModule mod_headers.c>
      Header unset ETag
